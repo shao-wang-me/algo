@@ -1,7 +1,5 @@
 # algo
 
-Algorithm problems explanations and solutions.
+Implementation of some of the popular algorithms in Python.
 
-Goal: Problems that I feel difficult and may not get right the next time.
-
-Non-goal: Ideally this repo is empty, so I don't have problems that I feel difficult. Also, for difficult problems, write solutions on paper instead of here if possible.
+Using `unittest` so no dependency is required. Run `python -m unittest` to run the tests.
