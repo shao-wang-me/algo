@@ -1,4 +1,5 @@
 from unittest import TestCase
+from random import random
 from sorting import sorting_algorithms
 
 class TestSorting(TestCase):
@@ -12,6 +13,9 @@ class TestSorting(TestCase):
       [-4,2,4,1,2,5,8,9,-12,28192,39,6.7],
       [5,4,3,2,1]
     ]
+
+    for _ in range(100):
+      self.cases.append([random() - 0.5 for _ in range(100)])
 
   def test_sorting(self):
     for sort in sorting_algorithms:

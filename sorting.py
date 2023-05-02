@@ -11,13 +11,15 @@ def partition_hoare(nums, l, r):
   pivot = random_pivot(nums, l, r)
   i, j = l + 1, r
   while i <= j:
-    while nums[i] < pivot:
+    if nums[i] < pivot:
       i += 1
-    while nums[j] >= pivot:
-      i -= 1
-    if i < j:
-      nums[i], nums[j] = nums[j], nums[i]
+      continue
+    if nums[j] >= pivot:
+      j -= 1
+      continue
+    nums[i], nums[j] = nums[j], nums[i]
   nums[l], nums[j] = nums[j], pivot
+  return j
 
 def partition_lomuto(nums, l, r):
   pivot = random_pivot(nums, l, r)
@@ -42,7 +44,7 @@ def quicksort_lomuto(nums):
   return nums
 
 def quicksort_hoare(nums):
-  quicksort_core(nums, 0, len(nums) - 1, partition_lomuto)
+  quicksort_core(nums, 0, len(nums) - 1, partition_hoare)
   return nums
 
 sorting_algorithms = [
